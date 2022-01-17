@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './sidebar.scss'
 import { Link, useLocation } from 'react-router-dom'
 import { images } from '../../constants'
@@ -7,6 +7,17 @@ import sidebarNav from '../../configs/sidebarNav'
 const Sidebar = () => {
 
     const [activeIndex, setActiveIndex] = useState(0)
+    const location = useLocation()
+
+    console.log(location);
+
+    useEffect(() => {
+        const curPath = window.location.pathname.split('/')[1]
+        console.log(curPath)
+        const activeItem = sidebarNav.findIndex(item => item.section === curPath)
+
+        setActiveIndex(curPath.length === 0 ? 0 : activeItem)
+    }, [location])
 
 
     return (
@@ -32,7 +43,7 @@ const Sidebar = () => {
                 }
                 <div className="sidebar_menu_item">
                     <div className="sidebar_menu_item_icon">
-                        <i class='bx bx-log-out' ></i>
+                        <i className='bx bx-log-out' ></i>
                     </div>
                     <div className="sidebar_menu_item_txt">
                         Logout
