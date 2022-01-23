@@ -1,3 +1,3 @@
 Project Admin-app
 
-Using ReactJS, Sass, Reponsive
+Using ReactJS, Sass, ChartJS, Reponsive
