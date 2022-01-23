@@ -36,7 +36,7 @@ li {
 }
 
 .mb {
-    margin-bottom: $spacing;
+    margin-bottom: 25px;
 
     @include tablet {
         margin-bottom: $mobileSpacing;
@@ -44,6 +44,14 @@ li {
 }
 
 .title {
-    font-size: $fontSizeMedium;
+    font-size: $fontSizeNormal;
     font-weight: 700;
+}
+
+.txt-success {
+    color: $green;
+}
+
+.txt-danger {
+    color: $red;
 }

@@ -4,6 +4,7 @@ import Box from '../components/box/Box'
 import DashboardWrapper, { DashboardWrapperMain, DashboardWrapperRight } from '../components/dashboard-wrapper/DashboardWrapper'
 import SummaryBox, { SummaryBoxSpecial } from '../components/summary-box/SummaryBox'
 import { colors, data } from '../constants'
+import OverallList from '../components/overall-list/OverallList'
 
 import {
     Chart as ChartJS,
@@ -15,6 +16,7 @@ import {
     Tooltip,
     Legend
 } from 'chart.js'
+import RevenueList from '../components/revenue-list/RevenueList'
 
 ChartJS.register(
     CategoryScale,
@@ -57,7 +59,13 @@ const Dashboard = () => {
                 </DashboardWrapperMain>
                 <DashboardWrapperRight>
                     <div className="title mb">Overall</div>
+                    <div className="mb">
+                        <OverallList />
+                    </div>
                     <div className="title mb">Revenue by Channel</div>
+                    <div className="mb">
+                        <RevenueList />
+                    </div>
                 </DashboardWrapperRight>
             </DashboardWrapper>
         </div>
